@@ -1,9 +1,18 @@
-function App() {
+import { Provider } from 'react-redux';
+
+import { store } from './store';
+import { AppTheme } from './theme';
+
+const App = () => {
   return (
-    <div className="app">
-      <h1>Hello World!</h1>
-    </div>
+    <Provider store={store}>
+      <AppTheme>
+        <div className="app">
+          <h1>Hello World!</h1>
+        </div>
+      </AppTheme>
+    </Provider>
   );
-}
+};
 
 export default App;
