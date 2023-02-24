@@ -1,15 +1,17 @@
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import { store } from './store';
 import { AppTheme } from './theme';
+import { AppRouter } from './router';
 
 const App = () => {
   return (
     <Provider store={store}>
       <AppTheme>
-        <div className="app">
-          <h1>Hello World!</h1>
-        </div>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
       </AppTheme>
     </Provider>
   );
