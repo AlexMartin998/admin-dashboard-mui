@@ -4,7 +4,7 @@ import { onSetMode } from '../store';
 export const useUiStore = () => {
   const dispatch = useDispatch();
 
-  const { mode } = useSelector(state => state.ui);
+  const { mode, userId } = useSelector(state => state.ui);
 
   const setMode = () => {
     dispatch(onSetMode());
@@ -13,6 +13,7 @@ export const useUiStore = () => {
   return {
     // Properties
     mode,
+    userId,
 
     // Methods
     setMode,
