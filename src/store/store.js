@@ -7,17 +7,14 @@ import { api } from './api/apiSlice';
 export const store = configureStore({
   reducer: {
     ui: uiSlice.reducer,
+
+    // RTK Query:
     [api.reducerPath]: api.reducer,
   },
 
   // Middleware en el store
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(api.middleware),
-
-  // error serializar la fecha:
-  // getDefaultMiddleware({
-  //   serializableCheck: false,
-  // }),
 });
 
 setupListeners(store.dispatch);

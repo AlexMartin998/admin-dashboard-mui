@@ -5,8 +5,11 @@ import { getEnvVariables } from './../../shared';
 const { VITE_API_URL } = getEnvVariables();
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: VITE_API_URL }),
   reducerPath: 'adminApi',
+
+  baseQuery: fetchBaseQuery({ baseUrl: VITE_API_URL }),
+
+  
   tagTypes: ['User'],
   endpoints: build => ({
     getUser: build.query({
