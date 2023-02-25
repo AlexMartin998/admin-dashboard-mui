@@ -9,11 +9,11 @@ export const uiSlice = createSlice({
   initialState,
 
   reducers: {
-    setMode: state => {
+    onSetMode: state => {
       state.mode = state.mode === 'light' ? 'dark' : 'light';
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setMode } = uiSlice.actions;
+export const { onSetMode } = uiSlice.actions;
