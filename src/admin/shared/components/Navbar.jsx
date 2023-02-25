@@ -18,7 +18,7 @@ import { useUiStore } from '../../../hooks';
 import { FlexBetween } from '../../../shared';
 // import profileImage from './../../../assets/profile.jpeg';
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { setMode } = useUiStore();
   const theme = useTheme();
 
@@ -33,7 +33,7 @@ const Navbar = () => {
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* left side */}
         <FlexBetween>
-          <IconButton onClick={() => console.log('Open/Close SIdebar')}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
 
