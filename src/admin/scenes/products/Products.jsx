@@ -1,8 +1,9 @@
-import { Box, CircularProgress, useMediaQuery } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
 import { useGetProductsQuery } from '../../../store';
 import { Header } from '../../shared';
 import ProductCard from './ProductCard';
+import { Loader } from '../../../shared';
 
 const Products = () => {
   const { data, isLoading } = useGetProductsQuery();
@@ -33,17 +34,7 @@ const Products = () => {
           ))}
         </Box>
       ) : (
-        <Box
-          sx={{
-            display: 'flex',
-            width: '100%',
-            height: '100%',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <CircularProgress />
-        </Box>
+        <Loader />
       )}
     </Box>
   );
