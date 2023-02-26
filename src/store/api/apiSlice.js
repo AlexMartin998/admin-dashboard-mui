@@ -9,7 +9,7 @@ export const api = createApi({
 
   baseQuery: fetchBaseQuery({ baseUrl: VITE_API_URL }),
 
-  tagTypes: ['User', 'Products'],
+  tagTypes: ['User', 'Products', 'Customers'],
   endpoints: build => ({
     getUser: build.query({
       query: id => `/clients/${id}`,
@@ -19,10 +19,15 @@ export const api = createApi({
       query: () => '/products',
       providesTags: ['Products'],
     }),
+    getCustomers: build.query({
+      query: () => '/clients/customers',
+      providesTags: ['Customers'],
+    }),
   }),
 });
 
 export const {
   useGetUserQuery, // <-- endpoints
   useGetProductsQuery,
+  useGetCustomersQuery,
 } = api;
