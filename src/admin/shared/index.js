@@ -1,3 +1,4 @@
+export { default as BreakdownChart } from './components/BreakdownChart';
 export { default as DailyOrMonthlyLine } from './components/DailyOrMonthlyLine';
 export { default as Header } from './components/Header';
 export { default as Navbar } from './components/Navbar';
