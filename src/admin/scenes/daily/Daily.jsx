@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { Loader } from '../../../shared';
 import { useGetSalesQuery } from '../../../store';
 import { Header } from '../../shared';
-import DailyLine from './DailyLine';
+import DailyLine from '../../shared/components/DailyOrMonthlyLine';
 import DateRange from './DateRange';
 
 const Daily = () => {

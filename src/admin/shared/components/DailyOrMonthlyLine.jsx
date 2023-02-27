@@ -1,9 +1,10 @@
 import { ResponsiveLine } from '@nivo/line';
 
-const DailyLine = ({ formattedData, theme }) => {
+const DailyOrMonthlyLine = ({ formattedData, theme }) => {
   return (
     <ResponsiveLine
       data={formattedData}
+      curve="catmullRom"
       theme={{
         axis: {
           domain: {
@@ -48,7 +49,6 @@ const DailyLine = ({ formattedData, theme }) => {
         reverse: false,
       }}
       yFormat=" >-.2f"
-      curve="catmullRom"
       axisTop={null}
       axisRight={null}
       axisBottom={{
@@ -107,4 +107,4 @@ const DailyLine = ({ formattedData, theme }) => {
   );
 };
 
-export default DailyLine;
+export default DailyOrMonthlyLine;
