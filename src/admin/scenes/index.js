@@ -1,3 +1,5 @@
+export { default as AdminPage } from './admins/AdminPage';
+export * from './admins/columns';
 export { default as Breakdown } from './breakdown/Breakdown';
 export { default as Customers } from './customers/Customers';
 export * from './customers/colums';
