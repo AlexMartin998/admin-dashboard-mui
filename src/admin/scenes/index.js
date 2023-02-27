@@ -3,6 +3,7 @@ export * from './customers/colums';
 export { default as Dashboard } from './dashboard/Dashboard';
 export { default as Choropleth } from './geography/Choropleth';
 export { default as Geography } from './geography/Geography';
+export { default as Overview } from './overview/Overview';
 export { default as ProductCard } from './products/ProductCard';
 export { default as Products } from './products/Products';
 export { default as DataGridCustomToolbar } from './transactions/DataGridCustomToolbar';

@@ -1,4 +1,5 @@
-import { Box, CircularProgress } from '@mui/material';
+import { Box } from '@mui/material';
+import './loader.css';
 
 const Loader = () => {
   return (
@@ -11,7 +12,15 @@ const Loader = () => {
         justifyContent: 'center',
       }}
     >
-      <CircularProgress />
+      <div className="loader">
+        <span>L</span>
+        <span>O</span>
+        <span>A</span>
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>G</span>
+      </div>
     </Box>
   );
 };

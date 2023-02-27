@@ -13,7 +13,7 @@ const Products = () => {
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />
 
-      {data || !isLoading ? (
+      {data && !isLoading ? (
         <Box
           mt="20px"
           display="grid"
