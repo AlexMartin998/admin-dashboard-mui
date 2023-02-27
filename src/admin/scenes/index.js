@@ -1,7 +1,7 @@
+export { default as Breakdown } from './breakdown/Breakdown';
 export { default as Customers } from './customers/Customers';
 export * from './customers/colums';
 export { default as Daily } from './daily/Daily';
-export { default as DailyLine } from '../shared/components/DailyOrMonthlyLine';
 export { default as DateRange } from './daily/DateRange';
 export { default as Dashboard } from './dashboard/Dashboard';
 export { default as Choropleth } from './geography/Choropleth';

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AdminLayout } from '../admin/layout';
 import {
+  Breakdown,
   Customers,
   Daily,
   Dashboard,
@@ -25,6 +26,7 @@ const AppRouter = () => {
         <Route path="overview" element={<Overview />} />
         <Route path="daily" element={<Daily />} />
         <Route path="monthly" element={<Monthly />} />
+        <Route path="breakdown" element={<Breakdown />} />
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>

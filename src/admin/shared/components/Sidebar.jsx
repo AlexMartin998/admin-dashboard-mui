@@ -44,7 +44,7 @@ const navItems = [
   { text: 'Overview', icon: <PointOfSaleOutlined /> },
   { text: 'Daily', icon: <TodayOutlined /> },
   { text: 'Monthly', icon: <CalendarMonthOutlined /> },
-  { text: 'Breackdown', icon: <PieChartOutline /> },
+  { text: 'Breakdown', icon: <PieChartOutline /> },
   { text: 'Management', icon: null },
   { text: 'Admin', icon: <AdminPanelSettingsOutlined /> },
   { text: 'Performance', icon: <TrendingUpOutlined /> },
