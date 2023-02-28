@@ -1,8 +1,10 @@
 import { DownloadOutlined } from '@mui/icons-material';
 import { Box, Button } from '@mui/material';
 
-import { FlexBetween } from '../../../shared';
-import { Header } from '../../shared';
+import { FlexBetween } from '../../../../shared';
+import { Header } from '../../../shared';
+
+
 
 const DashboardHeader = ({ theme }) => {
   return (
