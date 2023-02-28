@@ -42,7 +42,7 @@ npm i run test
 
 ## View demo
 
-[Demo](https://ecomvision-reactmui-alx.netlify.app)
+[Demo](https://ecomvision-reacmuijs-alx.netlify.app)
 
 ## Backend
 

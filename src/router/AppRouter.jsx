@@ -35,6 +35,7 @@ const AppRouter = () => {
         <Route path="admin" element={<AdminPage />} />
         <Route path="performance" element={<Performance />} />
 
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>
     </Routes>
