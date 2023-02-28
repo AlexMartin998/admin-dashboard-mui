@@ -19,6 +19,7 @@ export const api = createApi({
     'Admins',
     'Performance',
     'Dashboard',
+    'Auth',
   ],
   endpoints: build => ({
     getUser: build.query({
@@ -65,6 +66,15 @@ export const api = createApi({
       query: () => '/general/dashboard',
       providesTags: ['Dashboard'],
     }),
+
+    // auth
+    login: build.mutation({
+      query: credentials => ({
+        url: '/auth/login',
+        method: 'POST',
+        body: credentials,
+      }),
+    }),
   }),
 });
 
@@ -78,4 +88,6 @@ export const {
   useGetAdminsQuery,
   useGetUserPerformanceQuery,
   useGetDashboardQuery,
+
+  useLoginMutation,
 } = api;

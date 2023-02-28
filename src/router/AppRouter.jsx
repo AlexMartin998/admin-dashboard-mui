@@ -15,6 +15,7 @@ import {
   Products,
   Transactions,
 } from '../admin/scenes';
+import { LoginPage, PublicLayout } from '../auth';
 
 const AppRouter = () => {
   return (
@@ -37,6 +38,11 @@ const AppRouter = () => {
 
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      </Route>
+
+      <Route path="/auth" element={<PublicLayout />}>
+        <Route path="login" element={<LoginPage />} />
+        <Route path="*" element={<Navigate to="/auth/login" replace />} />
       </Route>
     </Routes>
   );
