@@ -13,10 +13,11 @@ const Breakdown = () => {
       <Box
         mt="40px"
         height="75vh"
+        // width="75vh"
 
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
+        // display="flex"
+        // alignItems="center"
+        // justifyContent="center"
       >
         {data && !isLoading ? <BreakdownChart data={data} /> : <Loader />}
       </Box>
