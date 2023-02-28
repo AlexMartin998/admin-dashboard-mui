@@ -13,7 +13,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery('(min-width: 1200px)');
   const { data, isLoading } = useGetDashboardQuery();
-  const { data: BreakdownChartData, isLoading: isLoadingBCh } =
+  const { data: breakdownChartData, isLoading: isLoadingBCh } =
     useGetDashboardQuery();
 
   const columns = useMemo(() => columnsStructure, []);
@@ -65,7 +65,7 @@ const Dashboard = () => {
           p="1rem"
           borderRadius="0.55rem"
         >
-          {data || !isLoading ? (
+          {data && !isLoading ? (
             <OverviewChart view="sales" isDashboard={true} data={data} />
           ) : (
             <Loader />
@@ -146,8 +146,8 @@ const Dashboard = () => {
             Sales By Category
           </Typography>
 
-          {!isLoadingBCh ? (
-            <BreakdownChart isDashboard={true} data={BreakdownChartData} />
+          {breakdownChartData && !isLoadingBCh ? (
+            <BreakdownChart isDashboard={true} data={breakdownChartData} />
           ) : (
             <Loader />
           )}
