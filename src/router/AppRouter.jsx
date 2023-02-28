@@ -16,11 +16,32 @@ import {
   Transactions,
 } from '../admin/scenes';
 import { LoginPage, PublicLayout } from '../auth';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRouter';
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<AdminLayout />}>
+      <Route
+        path="/auth"
+        element={
+          <PublicRoute>
+            <PublicLayout />
+          </PublicRoute>
+        }
+      >
+        <Route path="login" element={<LoginPage />} />
+        <Route path="*" element={<Navigate to="/auth/login" replace />} />
+      </Route>
+
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <AdminLayout />
+          </PrivateRoute>
+        }
+      >
         <Route path="dashboard" element={<Dashboard />} />
 
         <Route path="products" element={<Products />} />
@@ -38,11 +59,6 @@ const AppRouter = () => {
 
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </Route>
-
-      <Route path="/auth" element={<PublicLayout />}>
-        <Route path="login" element={<LoginPage />} />
-        <Route path="*" element={<Navigate to="/auth/login" replace />} />
       </Route>
     </Routes>
   );
