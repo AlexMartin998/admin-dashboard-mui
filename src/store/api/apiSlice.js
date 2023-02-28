@@ -21,6 +21,7 @@ export const api = createApi({
     'Dashboard',
     'Auth',
   ],
+
   endpoints: build => ({
     getUser: build.query({
       query: id => `/clients/${id}`,
@@ -75,6 +76,16 @@ export const api = createApi({
         body: credentials,
       }),
     }),
+    getNewToken: build.mutation({
+      query: token => {
+        return {
+          url: '/auth/renew',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+      },
+    }),
   }),
 });
 
@@ -90,4 +101,5 @@ export const {
   useGetDashboardQuery,
 
   useLoginMutation,
+  useGetNewTokenMutation,
 } = api;
