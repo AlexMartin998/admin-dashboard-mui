@@ -10,6 +10,7 @@ export { default as Choropleth } from './geography/Choropleth';
 export { default as Geography } from './geography/Geography';
 export { default as Monthly } from './monthly/Monthly';
 export { default as Overview } from './overview/Overview';
+export { default as Performance } from './performance/Performance';
 export { default as ProductCard } from './products/ProductCard';
 export { default as Products } from './products/Products';
 export { default as DataGridCustomToolbar } from './transactions/DataGridCustomToolbar';

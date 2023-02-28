@@ -11,6 +11,7 @@ import {
   Geography,
   Monthly,
   Overview,
+  Performance,
   Products,
   Transactions,
 } from '../admin/scenes';
@@ -32,6 +33,7 @@ const AppRouter = () => {
         <Route path="breakdown" element={<Breakdown />} />
 
         <Route path="admin" element={<AdminPage />} />
+        <Route path="performance" element={<Performance />} />
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>
