@@ -4,8 +4,6 @@ import { Box, Button } from '@mui/material';
 import { FlexBetween } from '../../../../shared';
 import { Header } from '../../../shared';
 
-
-
 const DashboardHeader = ({ theme }) => {
   return (
     <FlexBetween>

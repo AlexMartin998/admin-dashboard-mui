@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { AdminLayout } from '../admin/layout';
 import {
@@ -16,10 +16,19 @@ import {
   Transactions,
 } from '../admin/scenes';
 import { LoginPage, PublicLayout } from '../auth';
+import { useAuthStore } from '../hooks';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRouter';
 
 const AppRouter = () => {
+  const { checkAuthToken, status } = useAuthStore();
+
+  useEffect(() => {
+    checkAuthToken();
+  }, []);
+
+  if (status === 'checking') return;
+
   return (
     <Routes>
       <Route

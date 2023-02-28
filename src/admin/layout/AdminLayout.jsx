@@ -10,7 +10,6 @@ const AdminLayout = () => {
   const isNonMobile = useMediaQuery('(min-width: 600px)');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  // TODO: get user from db  <--  AUTH
   const { userId } = useUiStore();
   const { data } = useGetUserQuery(userId);
 

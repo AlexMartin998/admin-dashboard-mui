@@ -4,5 +4,5 @@ import { useAuthStore } from '../hooks';
 export const PrivateRoute = ({ children }) => {
   const { user } = useAuthStore();
 
-  return !user?.uid ? <Navigate to="/auth/login" /> : children;
+  return !user?.id ? <Navigate to="/auth/login" /> : children;
 };

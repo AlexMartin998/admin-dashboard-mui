@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import {
-  LightModeOutlined,
+  ArrowDropDownOutlined,
   DarkModeOutlined,
+  LightModeOutlined,
   Menu as MenuIcon,
   Search,
   SettingsOutlined,
-  ArrowDropDownOutlined,
 } from '@mui/icons-material';
 import {
   AppBar,
@@ -19,13 +18,15 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import { useState } from 'react';
 
-import { useUiStore } from '../../../hooks';
+import { useAuthStore, useUiStore } from '../../../hooks';
 import { FlexBetween } from '../../../shared';
 import profileImage from './../../../assets/profile.jpeg';
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
   const { setMode } = useUiStore();
+  const { startLogout } = useAuthStore();
   const theme = useTheme();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -33,6 +34,9 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
 
   const handleClick = e => setAnchorEl(e.currentTarget);
   const handleClose = () => setAnchorEl(null);
+  const handleLogout = () => {
+    startLogout();
+  };
 
   return (
     <AppBar
@@ -120,7 +124,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
             >
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              <MenuItem onClick={handleLogout}>Log Out</MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>
