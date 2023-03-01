@@ -13,11 +13,11 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 import { useAuthStore, useForm } from '../../hooks';
-import { CustomAlerts } from '../../shared';
+import { CustomAlerts, Loader } from '../../shared';
 
 export default function LoginPage() {
-  const { startLogin } = useAuthStore();
-  const [formLoginValues, handleLoginInputChange] = useForm({
+  const { isLoadingLogin, startLogin, setErrorMessage } = useAuthStore();
+  const [formLoginValues, handleLoginInputChange, , setFormValues] = useForm({
     email: 'swelbeck12@ycombinator.com',
     password: 'RSjzmAjnq',
   });
@@ -26,12 +26,17 @@ export default function LoginPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (Object.values(formLoginValues).some(value => !value))
+      return setErrorMessage(['All fields are required']);
 
+    setFormValues({ email: '', password: '' });
     startLogin({ email, password });
   };
 
   return (
     <Container component="main" maxWidth="xs">
+      {isLoadingLogin && <Loader />}
+
       <CssBaseline />
       <Box
         sx={{

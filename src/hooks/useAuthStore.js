@@ -1,19 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
   clearErrorMessage,
+  onChecking,
   onLogin,
   onLogout,
+  onSetErrorMessage,
   useGetNewTokenMutation,
   useLoginMutation,
 } from '../store';
 
 export const useAuthStore = () => {
   const dispatch = useDispatch();
-  const { status, user, errorMessage } = useSelector(state => state.auth);
+  const { status, user, errorMessage, isLoadingLogin } = useSelector(
+    state => state.auth
+  );
   const [login] = useLoginMutation();
   const [getNewToken] = useGetNewTokenMutation();
 
   const startLogin = async ({ email, password }) => {
+    dispatch(onChecking());
+
     try {
       const { data, error } = await login({ email, password });
       if (error) throw error;
@@ -47,9 +53,16 @@ export const useAuthStore = () => {
     }
   };
 
+  const setErrorMessage = errorMessage => {
+    dispatch(onSetErrorMessage(errorMessage));
+
+    setTimeout(() => {
+      dispatch(clearErrorMessage());
+    }, 2100);
+  };
+
   const startLogout = () => {
     localStorage.clear();
-    // dispatch();
     dispatch(onLogout());
   };
 
@@ -58,10 +71,12 @@ export const useAuthStore = () => {
     status,
     user,
     errorMessage,
+    isLoadingLogin,
 
     // Methods
     startLogin,
     checkAuthToken,
     startLogout,
+    setErrorMessage,
   };
 };
