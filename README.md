@@ -42,15 +42,24 @@ npm i run test
 
 ## View demo
 
-[Demo](https://ecomvision-reacmuijs-alx.netlify.app/auth/login)
+To see the real-time behavior you can log in with:
+
+- User: `swelbeck12@ycombinator.com` and password `RSjzmAjnq`
+
+<!-- [Demo](https://ecomvision-reacmuijs-alx.netlify.app/auth/login) -->
+
+<a href="https://ecomvision-reacmuijs-alx.netlify.app/auth/login" target="_blank">Demo</a>
 
 ## Backend
 
-[GitHub](https://github.com/AlexMartin998/admin-dashboard-mui-api)
+<!-- [GitHub](https://github.com/AlexMartin998/admin-dashboard-mui-api) -->
+
+<a href="https://github.com/AlexMartin998/admin-dashboard-mui-api" target="_blank">GitHub</a>
 
 ### Screenshots
 
 ![Admi](.screenshots/dashboard.png)
+
 
 
 | | | 

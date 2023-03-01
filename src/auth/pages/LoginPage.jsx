@@ -116,7 +116,7 @@ export default function LoginPage() {
         align="center"
         sx={{ mt: 8, mb: 4 }}
       >
-        Copyright © EcomVision {new Date().getFullYear()}
+        Copyright © Adrian {new Date().getFullYear()}
       </Typography>
 
       <CustomAlerts />
