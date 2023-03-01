@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -21,6 +22,7 @@ export default function LoginPage() {
     password: 'RSjzmAjnq',
   });
   const { email, password } = formLoginValues;
+  const theme = useTheme();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -78,7 +80,13 @@ export default function LoginPage() {
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{
+              mt: 3,
+              mb: 2,
+              backgroundColor: theme.palette.secondary.light,
+              color: theme.palette.background.alt,
+            }}
+            id="login-btn"
           >
             Sign In
           </Button>

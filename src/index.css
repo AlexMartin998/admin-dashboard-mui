@@ -29,11 +29,6 @@ body,
   background: #7a7f9d;
 }
 
-/* .MuiBox-root.css-w7wi1p {
-  width: 32vw !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  justify-content: center !important;
-  background: red;
-} */
+#login-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+}

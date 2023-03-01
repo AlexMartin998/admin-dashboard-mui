@@ -14,8 +14,6 @@ export const useAuthStore = () => {
   const [getNewToken] = useGetNewTokenMutation();
 
   const startLogin = async ({ email, password }) => {
-    // dispatch(onChecking());
-
     try {
       const { data, error } = await login({ email, password });
       if (error) throw error;
@@ -25,7 +23,6 @@ export const useAuthStore = () => {
 
       dispatch(onLogin(data?.user));
     } catch (error) {
-      console.log(error.data.message);
       dispatch(onLogout(error.data.message));
 
       setTimeout(() => {

@@ -111,6 +111,7 @@ const BreakdownChart = ({ data, isDashboard = false }) => {
           },
         ]}
       />
+
       <Box
         position="absolute"
         top="50%"
